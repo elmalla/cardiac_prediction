@@ -36,7 +36,7 @@ def predict():
     return render_template('new.html',statement=statement())
 
 
-    @app.route("/diabetes",methods=["GET","POST"])
+@app.route("/diabetes",methods=["GET","POST"])
 def diabetes():
 	if request.method=='GET':
 		return render_template("form.html")
@@ -188,10 +188,6 @@ def tb():
 @app.route('/about')
 def about():
 	return render_template('about.html')
-
-
-
-
 
 if __name__=='__main__':
     app.run()
