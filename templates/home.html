@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <title>Cardiac Arrest</title>
+    <title>Cardiac Arrest | Smart Health</title>
     <style type="text/css">
         body {
 
@@ -54,36 +54,25 @@
     </style>
 </head>
 
-<body style="background-image: url('{{url_for('static',filename='/img12.jpg')}}')">
+<body style="        background-image: url('{{url_for('static',filename='/elderly.png')}}')">
     
 
 
-    <h1 style="text-align:center;color: rgb(156, 11, 6);font-family: inherit;">Machine
-        Learning model of Cardiac Arrest Prediction</h1>
+    <h1 style="text-align:center;color: rgb(156, 11, 6);font-family: inherit;">Cardiac Arrest Prediction</h1>
     <hr style="color: rgb(0, 0, 0);">
 
-
-
-    <h2 style="color: rgb(0, 0, 0);">About Cardiac arrest</h2>
-
     <div class="a">
-        <p style="color: rgb(0, 0, 0);font-size:20px"> Sudden, unexpected loss of heart function, breathing and
-            consciousness.
-            In cardiac arrest, the heart abruptly stops beating. Without prompt intervention, it can result in the
-            person's death.
-            The main symptom is loss of consciousness and unresponsiveness.
-            This medical emergency needs immediate CPR or use of a defibrillator. Hospital care includes drugs, an
-            implantable device or other procedures.
+        <p style="color: rgb(0, 0, 0);font-size:20px">
+            What is Cardiac arrest ?
+        </p>
+        <p style="color: rgb(0, 0, 0);font-size:15px">
+            Cardiac arrest, also known as sudden cardiac arrest, is when the heart stops beating suddenly. The lack of blood flow to the brain and other organs can cause a person to lose consciousness, become disabled or die if not treated immediately
 
         </p>
     </div>
 
 
     <form style="margin-top: 50px;padding-left:200px;" action="{{url_for('predict')}}" method="post">
-
-
-
-
 
         <input type="text" placeholder="Person's Age" aria-label="default input example" required='required' name="a">
 
@@ -137,13 +126,10 @@
         <button style="margin-left:00px" type="submit" class="btn btn-outline-danger btn-lg">Predict</button><br><br>
 
         <b style="color: rgb(0, 0, 0);font-size: 22px;">{{statement}}</b>
-        <p><a href="https://github.com/Vijaysinh7000/cardiac-arrest-prediction">Visit to GitHub Repository for more details</a></p>
-
+        <p><a href="https://m.me/SmartHealthMonitoring">Talk to us now</a></p>
 
     </form>
     <br>
-
-
 
 
     <!-- Optional JavaScript; choose one of the two! -->
