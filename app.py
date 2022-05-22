@@ -7,8 +7,8 @@ model=pickle.load(open('Healthcare.pkl','rb'))
 app = Flask(__name__)
 
 @app.route('/',methods=['POST','GET'])
-def new():
-    return render_template('new.html')
+def home():
+    return render_template('home.html')
 
 
 
