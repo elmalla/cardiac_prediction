@@ -6,13 +6,11 @@ model=pickle.load(open('Healthcare.pkl','rb'))
 
 app = Flask(__name__)
 
-#@app.route('/',methods=['POST','GET'])
-#def new():
- #   return render_template('new.html')
-
 @app.route('/',methods=['POST','GET'])
-def home():
-	return render_template('home.html')
+def new():
+    return render_template('new.html')
+
+
 
 @app.route('/predict', methods=['POST','GET'] )
 def predict():
