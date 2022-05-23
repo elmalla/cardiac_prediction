@@ -33,7 +33,7 @@ def predict():
         elif pred == 1:
             return 'Result:- The AI model predicted that they is high probability that you might suffer from Cardiac arrest.'
     
-    return render_template('new.html',statement=statement())
+    return render_template('home.html',statement=statement())
 
 
 @app.route("/diabetes",methods=["GET","POST"])
