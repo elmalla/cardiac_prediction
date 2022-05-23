@@ -133,7 +133,7 @@
                 <div class="col-md-12">
                     <div class="con-us">
                         <h1 class="text-center">Cardiac Arrest Prediction</h1>
-                        <p class="text-center">We will be happy to hear your requests </p>
+                        <p class="text-center"> </p>
                     </div>
                 </div>
             </div>
@@ -144,126 +144,71 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="left-form">
-                        <h4>Email-Us:</h4>
-                        <p class="mmail"><a href="#">info [at] smarthealthmonitoring.com</a></p>
-                        <h4>Location:</h4>
-                        <img src="<?php echo asset_url('img/flag1.png'); ?>" alt="flag"> <span class="location">Kulim Techno City, Kedah, Malaysia</span>
-                        <h4>Phone:</h4>
-                        <a href="tel:006019402-8484" class="numb">[Asia]+60   -19- 402-8484</a> <br />
-                        <a href="tel:0096656-8772040" class="numb hidden">[Gulf]+966  -56- 877 2040</a>
+                        <h4>What is Cardiac arrest ?</h4>
+                        <p class="mmail">
+                            Cardiac arrest, also known as sudden cardiac arrest, is when the heart stops beating suddenly. The lack of blood flow to the brain and other organs can cause a person to lose consciousness, become disabled or die if not treated immediately
+                        </p>
+                       
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <!-- Ahmed-->
-                    <?php echo form_open($url, array('class'=>'form-horizontal frm f1','name'=>'myform', 'id'=>'contactus_form')); ?>
 
-                    <!--Ahmed-->
-                    <!--<form class="form-horizontal frm f1">-->
-                    <div class="form-group">
-                        <label for="name" class="control-label col-sm-4">Name<span>*</span></label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Bill Gates" data-validation="required" value="<?php echo set_value('name');?>">
-                            <span id="error_name" class="text-danger"></span>
-                        </div>
-                    </div>
+                    <form style="margin-top: 50px;padding-left:200px;" action="{{url_for('predict')}}" method="post">
 
-                    <div class="form-group">
-                        <label for="company" class="control-label col-sm-4">Company URL<span>*</span></label>
+                        <input type="text" placeholder="Person's Age" aria-label="default input example" required='required' name="a">
 
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="domain" name="domain" placeholder="www.facebook.com" data-validation="required" value="<?php echo set_value('domain');?>">
-                            <span id="error_domain" class="text-danger"></span>
+                        <select aria-label="Default select example" type="text" required='required' name="b">
 
+                            <option value="1"> Female </option>
+                            <option value="2"> Male</option>
 
-                        </div>
-                    </div>
+                        </select>
 
+                        <input type="text" placeholder="Height in cm" aria-label="default input example" required='required' name="c">
 
-                    <div class="form-group">
-                        <label for="email" class="control-label col-sm-4">Email<span>*</span></label>
-                        <div class="col-sm-8">
-                            <input id="email" name="email" class="form-control" type="email" placeholder="kristin@web.de" data-validation="required" value="<?php echo set_value('email');?>">
-                            <span id="error_email" class="text-danger"></span>
-                        </div>
-                    </div>
+                        <input type="text" placeholder="Weight in kg" aria-label="default input example" required='required' name="d">
 
-                    <div class="form-group">
-                        <label for="subject" class="control-label col-sm-4">Subject<span>*</span></label>
-                        <div class="col-sm-8">
-                            <select name="subject" id="subject" class="form-control" value="<?php echo set_value('subject');?>">
-                                <option value="Sales Enquiry">Sales Enquiry</option>
-                                <option value="Feedback">Feedback</option>
-                                <option value="Other">Others</option>
+                        <input type="text" placeholder="Systolic blood pressure" aria-label="default input example" required='required'
+                               name="e"><br> <br>
 
-                            </select>
-                        </div>
-                    </div>
+                        <input type="text" placeholder="Diastolic blood pressure" aria-label="default input example" required='required'
+                               name="f">
 
-                    <div class="form-group">
-                        <label for="message" class="control-label col-sm-4">Message<span>*</span></label>
-                        <div class="col-sm-8">
-                            <textarea class="form-control" rows="5" id="message" name="message" placeholder="We need to promote our new line of products" type="text" data-validation="required" value=""></textarea>
-                            <span id="error_message" class="text-danger"></span>
-                        </div>
-                    </div>
+                        <select aria-label="Default select example" type="text" required='required' name="g">
 
-                    <div class="control-groupe form-group">
-                        <label class="control-contact control--checkbox checkbox-inline">
-                            <table border="0px" cellpadding="5px" cellspacing="5px">
-                                <tr>
+                            <option value="1">Cholestrol is normal </option>
+                            <option value="2">Cholestrol is above normal </option>
+                            <option value="3">Cholestrol is well above normal</option>
+                        </select>
 
-                                    <td align="left" valign="center">
-                                        <span>
-                                            I have read and accept Intelligence Com <a href="<?php echo convert_url('terms/of/service'); ?>">
-                                                Terms of
-                                                Services
-                                            </a> and <a href="<?php echo convert_url('privacy/policy/0'); ?>">Privacy Policy</a>
-                                        </span>
-                                    </td>
+                        <select aria-label="Default select example" type="text" required='required' name="h">
 
-                                    <td align="left" valign="center" style="display:block;">
-                                        <input type="checkbox" id="acceptterms" name="acceptterms">
-                                        <div class="contactus_indicator"></div>
-                                    </td>
+                            <option value="1">Glucose is normal </option>
+                            <option value="2"> Glucose above normal </option>
+                            <option value="3">Glucose well above normal </option>
+                        </select>
 
 
-                                </tr>
-                            </table>
+                        <select aria-label="Default select example" type="text" required='required' name="j">
 
-                        </label>
+                            <option value="0">Do not smoke</option>
+                            <option value="1">Do smoke</option>
 
+                        </select>
 
+                        <select aria-label="Default select example" type="text" required='required' name="i">
 
+                            <option value="0">Non Alcoholic</option>
+                            <option value="1">Alcoholic</option>
 
-                    </div>
+                        </select>
 
-                    <div class="form-group">
-                        <label for="captcha" class="control-label col-sm-4"></label>
-                        <div class="col-sm-8">
-                            <span class="msg-error error"></span>
-                            <div class="g-recaptcha" data-sitekey="6Ldt8REUAAAAAC9QpT5NUkI391ToEqaWiYdh8j0W"></div>
-                        </div>
-                    </div>
+                        <br><br>
+                        <button style="margin-left:00px" type="submit" class="btn btn-outline-danger btn-lg">Predict</button><br><br>
 
+                        <b style="color: rgb(0, 0, 0);font-size: 22px;">{{statement}}</b>
+                        <p><a href="https://m.me/SmartHealthMonitoring">Talk to Smart Health Team </a></p>
 
-
-
-                    <div class="form-group">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-8">
-                            <button type="submit" id="submit" value="submit" class="btn btn-de">
-                                <div id="send-btn-text" class="col-sm-8">
-                                    <a href="m.me/SmartHealthMonitoring"><i class="fi-burst-new"></i> Chat With Us Now </a>
-                                </div>
-                                <div id="sending" class="col-sm-8" style="display:none;">
-                                    Sending Please Wait....
-                                    <img src="<?php echo asset_url('img/ajax-loader.gif'); ?>" alt="Verify" />
-                                </div>
-                            </button>
-
-                        </div>
-                    </div>
-                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>" />
                     </form>
 
                 </div>
@@ -278,77 +223,9 @@
     </div>
 
 
-    <h1 style="text-align:center;color: rgb(156, 11, 6);font-family: inherit;">Cardiac Arrest Prediction</h1>
-    <hr style="color: rgb(0, 0, 0);">
-
-    <div class="a">
-        <p style="color: rgb(0, 0, 0);font-size:20px">
-            What is Cardiac arrest ?
-        </p>
-        <p style="color: rgb(0, 0, 0);font-size:15px">
-            Cardiac arrest, also known as sudden cardiac arrest, is when the heart stops beating suddenly. The lack of blood flow to the brain and other organs can cause a person to lose consciousness, become disabled or die if not treated immediately
-
-        </p>
-    </div>
 
 
-    <form style="margin-top: 50px;padding-left:200px;" action="{{url_for('predict')}}" method="post">
 
-        <input type="text" placeholder="Person's Age" aria-label="default input example" required='required' name="a">
-
-        <select aria-label="Default select example" type="text" required='required' name="b">
-
-            <option value="1"> Female </option>
-            <option value="2"> Male</option>
-
-        </select>
-
-        <input type="text" placeholder="Height in cm" aria-label="default input example" required='required' name="c">
-
-        <input type="text" placeholder="Weight in kg" aria-label="default input example" required='required' name="d">
-
-        <input type="text" placeholder="Systolic blood pressure" aria-label="default input example" required='required'
-               name="e"><br> <br>
-
-        <input type="text" placeholder="Diastolic blood pressure" aria-label="default input example" required='required'
-               name="f">
-
-        <select aria-label="Default select example" type="text" required='required' name="g">
-
-            <option value="1">Cholestrol is normal </option>
-            <option value="2">Cholestrol is above normal </option>
-            <option value="3">Cholestrol is well above normal</option>
-        </select>
-
-        <select aria-label="Default select example" type="text" required='required' name="h">
-
-            <option value="1">Glucose is normal </option>
-            <option value="2"> Glucose above normal </option>
-            <option value="3">Glucose well above normal </option>
-        </select>
-
-
-        <select aria-label="Default select example" type="text" required='required' name="j">
-
-            <option value="0">Do not smoke</option>
-            <option value="1">Do smoke</option>
-
-        </select>
-
-        <select aria-label="Default select example" type="text" required='required' name="i">
-
-            <option value="0">Non Alcoholic</option>
-            <option value="1">Alcoholic</option>
-
-        </select>
-
-        <br><br>
-        <button style="margin-left:00px" type="submit" class="btn btn-outline-danger btn-lg">Predict</button><br><br>
-
-        <b style="color: rgb(0, 0, 0);font-size: 22px;">{{statement}}</b>
-        <p><a href="https://m.me/SmartHealthMonitoring">Talk to Smart Health Team </a></p>
-
-    </form>
     <br>
 
 
