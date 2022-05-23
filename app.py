@@ -29,7 +29,7 @@ def predict():
     
     def statement():
         if pred == 0:
-            return 'Result:- The AI model predicted that they is high probability that you won/'t suffer from Cardiac arrest'
+            return 'Result:- The AI model predicted that they is high probability that you wont suffer from Cardiac arrest'
         elif pred == 1:
             return 'Result:- The AI model predicted that they is high probability that you might suffer from Cardiac arrest.'
     
