@@ -1,6 +1,6 @@
 numpy
 Flask
-scikit-learn==0.23.2
+scikit-learn==0.23.3
 Flask-WTF
 WTForms
 joblib
