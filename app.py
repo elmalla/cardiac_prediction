@@ -29,9 +29,9 @@ def predict():
     
     def statement():
         if pred == 0:
-            return 'Result:- The model has predicted that you will not suffer from any cardic arresst but you should take care of your self.'
+            return 'Result:- The AI model predicted that they is high probability that you won/'t suffer from Cardiac arrest'
         elif pred == 1:
-            return 'Result:- You should consult with doctor, The model has predicted that you will suffer form cardic arrest.'
+            return 'Result:- The AI model predicted that they is high probability that you might suffer from Cardiac arrest.'
     
     return render_template('new.html',statement=statement())
 
