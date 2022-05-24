@@ -44,8 +44,10 @@ def predict():
 
 @app.route("/save_email", methods=['POST'])
 def save_email():
-    name = request.form.get('email')
-   
+    email = request.form.get('email')
+    if request.method == 'POST':
+           with open('emails.txt', 'w') as f:
+                f.write(str(email))
     confirm_msg = "Your email have been saved. Thank you!"
     return render_template("home.html", confirm_msg=confirm_msg)
 
