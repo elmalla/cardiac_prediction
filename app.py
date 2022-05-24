@@ -27,13 +27,19 @@ def predict():
     features=np.array([data1,data2,data3,data4,data5,data6,data7,data8,data9,data10])
     pred = model.predict([features])
     
-    def statement():
+    def result():
         if pred == 0:
-            return 'There is NO evidence of possible from Cardiac arrest'
+            return 'There is NO evidence of possible Cardiac arrest'
         elif pred == 1:
-            return 'There is evidence of possible from Cardiac arrest'
+            return 'There is evidence of possible Cardiac arrest'
+
+    def resultcolor():
+        if pred == 0:
+            return green
+        elif pred == 1:
+            return red
     
-    return render_template('home.html',statement=statement())
+    return render_template('home.html',statement=result(),resultcolor=resultcolor())
 
 
 @app.route("/diabetes",methods=["GET","POST"])
