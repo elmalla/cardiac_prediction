@@ -42,6 +42,13 @@ def predict():
     return render_template('home.html',statement=result(),resultcolor=resultcolor())
 
 
+@app.route("/save_email", methods=['POST'])
+def save_email():
+    name = request.form.get('email')
+   
+    confirm_msg = "Your email have been saved. Thank you!"
+    return render_template("home.html", confirm_msg=confirm_msg)
+
 @app.route("/diabetes",methods=["GET","POST"])
 def diabetes():
 	if request.method=='GET':

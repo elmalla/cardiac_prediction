@@ -153,14 +153,21 @@
                             <b style="color:{{resultcolor}};font-size:16px;">{{statement}}</b>
                         </p>
                         <br><br><br>
-                        <h4 style="color: forestgreen ;">Our target is to save 5000 Lives</h4>
+                        <h4 style="color: darkslategrey ;">Our target is to save 5000 Lives</h4>
                         <p><a href="https://LaunchGood.com/smarthealth\">Donate to support our cause now</a></p>
+                        <br><br>
+                        <form class="form-inline" action="/save_email" method="POST">
+                            <label>keep me informed about FREE tools :</label>
+                            <input type="email" name="email">
+                            <input type="submit" value="Subscribe Me" class="btn btn-primary">
+                            <p>{{confirm_msg}}</p>
+                        </form>
 
                     </div>
                 </div>
                 <div class="col-md-8">
 
-                    <form style="margin-top: 30px;padding-left:50px;" action="{{url_for('predict')}}" method="post">
+                    <form style="margin-top: 20px;padding-left:40px;" action="{{url_for('predict')}}" method="post">
 
                         <input type="text" placeholder="Person's Age" aria-label="default input example" required='required' name="a">
 
