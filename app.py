@@ -35,9 +35,9 @@ def predict():
 
     def resultcolor():
         if pred == 0:
-            return green
+            return "green"
         elif pred == 1:
-            return red
+            return "red"
     
     return render_template('home.html',statement=result(),resultcolor=resultcolor())
 
