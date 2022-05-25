@@ -51,7 +51,7 @@ def save_email():
     if request.method == 'POST':
         url = "https://smarthealthmonitoring.com/contactus/save"
         params = {"email": email}
-        print requests.get(url, params).text
+        print (requests.get(url, params).text)
         confirm_msg = "Your email have been saved. Thank you!"
     else:
 	    confirm_msg = "Try contacting info@smarthealthmonitoring.com"
