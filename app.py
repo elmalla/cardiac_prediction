@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 import numpy as np
 import pickle
+import requests
 
 model=pickle.load(open('Healthcare.pkl','rb'))
 
@@ -46,7 +47,7 @@ def predict():
 def save_email():
     email = request.form.get('email')
 	base_url = "https://smarthealthmonitoring.com/contactus/save/?email="
-	url = base_url + email
+	#url = base_url + email
     if request.method == 'POST':
         url = "https://smarthealthmonitoring.com/contactus/save"
         params = {"email": email}
@@ -54,7 +55,6 @@ def save_email():
         confirm_msg = "Your email have been saved. Thank you!"
     else:
 	    confirm_msg = "Try contacting info@smarthealthmonitoring.com"
-
     return render_template("home.html", confirm_msg=confirm_msg)
 
 @app.route("/diabetes",methods=["GET","POST"])
