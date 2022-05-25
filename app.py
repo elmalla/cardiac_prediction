@@ -45,10 +45,18 @@ def predict():
 @app.route("/save_email", methods=['POST'])
 def save_email():
     email = request.form.get('email')
+	base_url = "https://smarthealthmonitoring.com/contactus/save/?email="
+	url = base_url + email
+
     if request.method == 'POST':
-           with open('emails.txt', 'w') as f:
-                f.write(str(email))
-    confirm_msg = "Your email have been saved. Thank you!"
+           url = "https://smarthealthmonitoring.com/contactus/save"
+           params = {"email": email}
+
+           print requests.get(url, params).text
+           confirm_msg = "Your email have been saved. Thank you!"
+    else:
+	       confirm_msg = "Try contacting info@smarthealthmonitoring.com"
+
     return render_template("home.html", confirm_msg=confirm_msg)
 
 @app.route("/diabetes",methods=["GET","POST"])

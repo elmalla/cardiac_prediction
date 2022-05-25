@@ -5,3 +5,4 @@ Flask-WTF
 WTForms
 joblib
 gunicorn
+requests
