@@ -46,7 +46,7 @@ def predict():
 @app.route("/save_email", methods=['POST'])
 def save_email():
     email = request.form.get('email')
-	base_url = "https://smarthealthmonitoring.com/contactus/save/?email="
+	#base_url = "https://smarthealthmonitoring.com/contactus/save/?email="
 	#url = base_url + email
     if request.method == 'POST':
         url = "https://smarthealthmonitoring.com/contactus/save"
