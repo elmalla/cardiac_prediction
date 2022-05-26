@@ -9,6 +9,14 @@ app = Flask(__name__)
 
 @app.route('/',methods=['POST','GET'])
 def home():
+    def get_my_ip():
+        return jsonify({'ip': request.remote_addr}), 200
+
+	page = "cardiac-arrest-smarthealth.herokuapp"
+    url = "https://smarthealthmonitoring.com/contactus/prediction"
+    params = {"ip": get_my_ip,"headers":request.headers['User-Agent'],"user_agent":request.headers.get('User-Agent'),"referr_url_sess ":request.referrer,"page":page}
+    print (requests.get(url, params).text)
+
     return render_template('home.html')
 
 
