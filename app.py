@@ -12,7 +12,7 @@ def home():
     def get_my_ip():
         return jsonify({'ip': request.remote_addr}), 200
 
-	page = "cardiac-arrest-smarthealth.herokuapp"
+	page ='cardiac-arrest-smarthealth-herokuapp'
     url = "https://smarthealthmonitoring.com/contactus/prediction"
 	header = request.headers
 	agent =request.headers.get('User-Agent')
