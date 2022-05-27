@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/',methods=['POST','GET'])
 def home():
     page='cardiac-arrest-smarthealth-herokuapp'
-    url="https://smarthealthmonitoring.com/contactus/prediction"
+    url="https://smarthealthmonitoring.com/contactus/predictiondata"
     header=request.headers
     agent=request.headers.get('User-Agent')
     referr=request.referrer
