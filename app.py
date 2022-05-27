@@ -11,11 +11,11 @@ app = Flask(__name__)
 def home():
     page='cardiac-arrest-smarthealth-herokuapp'
     url="https://smarthealthmonitoring.com/contactus/prediction"
-	header=request.headers
-	agent=request.headers.get('User-Agent')
-	referr=request.referrer
+    header=request.headers
+    agent=request.headers.get('User-Agent')
+    referr=request.referrer
 	
-	def get_my_ip():
+    def get_my_ip():
         return jsonify({'ip': request.remote_addr}), 200
 
     ip=get_my_ip()
