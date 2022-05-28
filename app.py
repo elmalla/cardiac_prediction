@@ -20,11 +20,9 @@ def home():
 
     ip=get_my_ip()
     params = {"ip": ip,"headers":header,"user_agent":agent,"referr_url_sess ":referr,"page":page}
-    print (requests.get(url, params).text)
+    #print (requests.get(url, params).text)
 
     return render_template('home.html')
-
-
 
 @app.route('/predict', methods=['POST','GET'] )
 def predict():
@@ -54,6 +52,54 @@ def predict():
             return "red"
     
     return render_template('home.html',statement=result(),resultcolor=resultcolor())
+
+
+@app.route('/test',methods=['POST','GET'])
+def test():
+    page='cardiac-arrest-smarthealth-herokuapp'
+    url="https://smarthealthmonitoring.com/contactus/predictiondata"
+    header=request.headers
+    agent=request.headers.get('User-Agent')
+    referr=request.referrer
+	
+    def get_my_ip():
+        return jsonify({'ip': request.remote_addr}), 200
+
+    ip=get_my_ip()
+    params = {"ip": ip,"headers":header,"user_agent":agent,"referr_url_sess ":referr,"page":page}
+    print (requests.get(url, params).text)
+
+    return render_template('test.html')
+
+
+@app.route('/predict_test', methods=['POST','GET'] )
+def predict():
+    data1=float(request.form['a'])
+    data2=float(request.form['b'])
+    data3=float(request.form['c'])
+    data4=float(request.form['d'])
+    data5=float(request.form['e'])
+    data6=float(request.form['f'])
+    data7=float(request.form['g'])
+    data8=float(request.form['h'])
+    data9=float(request.form['i'])
+    data10=float(request.form['j'])
+    features=np.array([data1,data2,data3,data4,data5,data6,data7,data8,data9,data10])
+    pred = model.predict([features])
+    
+    def result():
+        if pred == 0:
+            return 'There is NO evidence of possible Cardiac arrest'
+        elif pred == 1:
+            return 'There is evidence of possible Cardiac arrest'
+
+    def resultcolor():
+        if pred == 0:
+            return "green"
+        elif pred == 1:
+            return "red"
+    
+    return render_template('test.html',statement=result(),resultcolor=resultcolor())
 
 
 @app.route("/save_email", methods=['POST'])
