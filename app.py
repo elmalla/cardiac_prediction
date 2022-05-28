@@ -70,7 +70,7 @@ def test():
 
 
 @app.route('/predict_test', methods=['POST','GET'] )
-def predict():
+def predict_test():
     data1=float(request.form['a'])
     data2=float(request.form['b'])
     data3=float(request.form['c'])
