@@ -38,7 +38,7 @@
 
 
     <!-- Global site tag (gtag.js) - Google Analytics Smart Health-->
-    <script async=async src="https://www.googletagmanager.com/gtag/js?id=UA-89053704-13"></script>
+    <script async=async async=async src="https://www.googletagmanager.com/gtag/js?id=UA-89053704-13"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -46,6 +46,27 @@
 
         gtag('config', 'UA-89053704-13');
     </script>
+
+    <!-- Facebook Pixel Code Smart Health-->
+    <script>
+        setTimeout(function(){
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '912472042677448');
+        fbq('track', 'PageView');
+        }, 2000);
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=912472042677448&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
 
     <meta name="revisit-after" content="10 days" />
     <meta name="robots" content="INDEX" />
