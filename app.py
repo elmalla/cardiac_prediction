@@ -22,12 +22,22 @@ def home():
     header=request.headers
     agent=request.headers.get('User-Agent')
     referr=request.referrer
+    
+    current_count = read_click_db()
+    if current_count is not None:
+        new_count = int(current_count) + 1
+        current_count=write_click_db(new_count)
+    else:
+        write_click_db(1)
+     
+    app.logger.debug('current_count :'+ current_count)
+    app.logger.debug('new_count after :'+ str(new_count))
 	
     def get_my_ip():
         return jsonify({'ip': request.remote_addr}), 200
 
     ip=get_my_ip()
-    return render_template('home.html')
+    return render_template('home.html',counter=new_count)
 
 @app.route('/predict', methods=['POST','GET'] )
 def predict():
