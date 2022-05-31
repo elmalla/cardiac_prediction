@@ -80,6 +80,7 @@ def test():
         return jsonify({'ip': request.remote_addr}), 200
 
     ip=get_my_ip()
+    app.logger.debug('IP :'+ ip)
     params = {"ip": ip,"headers":header,"user_agent":agent,"referr_url_sess ":referr,"page":page}
     print (requests.get(url, params).text)
 
