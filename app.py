@@ -67,7 +67,8 @@ def test():
         current_count=write_click_db(new_count)
     write_click_db(1)
      
-    app.logger.debug('this is a DEBUG message')
+    app.logger.debug('current_count :'+ current_count)
+    app.logger.debug('new_count :'+ new_count)
     page='cardiac-arrest-smarthealth-herokuapp'
     url="https://smarthealthmonitoring.com/contactus/predictiondata"
     header=request.headers
