@@ -57,14 +57,7 @@ def test():
     if current_count is not None:
         new_count = int(current_count) + 1
         return write_click_db(new_count)
-    return write_click_db(1)
-
-    # GET logic
-    elif request.method == "GET":
-        current_count = read_click_db()
-        if current_count is not None:
-                return current_count
-        return "0"
+    write_click_db(1)
     
     page='cardiac-arrest-smarthealth-herokuapp'
     url="https://smarthealthmonitoring.com/contactus/predictiondata"
