@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,jsonify
 import numpy as np
 import pickle
 import requests
+from os.path import isfile
 
 model=pickle.load(open('Healthcare.pkl','rb'))
 
