@@ -57,7 +57,7 @@ def test():
     current_count = read_click_db()
     if current_count is not None:
         new_count = int(current_count) + 1
-        return write_click_db(new_count)
+        write_click_db(new_count)
     write_click_db(1)
     
     page='cardiac-arrest-smarthealth-herokuapp'
