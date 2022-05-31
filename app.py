@@ -76,7 +76,7 @@ def test():
     return render_template('test.html',counter=current_count)
 
 def read_click_db() -> str:
-    if not path.isfile("visitors.txt"):
+    if not os.path.isfile("visitors.txt"):
         print("File doesn't exist")
         return
     with open("visitors.txt", "rt") as f:
