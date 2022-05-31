@@ -53,6 +53,19 @@ def predict():
 
 @app.route('/test',methods=['POST','GET'])
 def test():
+    current_count = read_click_db()
+    if current_count is not None:
+        new_count = int(current_count) + 1
+        return write_click_db(new_count)
+    return write_click_db(1)
+
+    # GET logic
+    elif request.method == "GET":
+        current_count = read_click_db()
+        if current_count is not None:
+                return current_count
+        return "0"
+    
     page='cardiac-arrest-smarthealth-herokuapp'
     url="https://smarthealthmonitoring.com/contactus/predictiondata"
     header=request.headers
@@ -66,7 +79,23 @@ def test():
     params = {"ip": ip,"headers":header,"user_agent":agent,"referr_url_sess ":referr,"page":page}
     print (requests.get(url, params).text)
 
-    return render_template('test.html')
+    return render_template('test.html',counter=current_count)
+
+def read_click_db() -> str:
+    if not path.isfile("visitors.txt"):
+        print("File doesn't exist")
+        return
+    with open("visitors.txt", "rt") as f:
+        click_counter = f.readline()
+        f.close()
+    return click_counter
+
+
+def write_click_db(counter: int):
+    with open("visitors.txt", "wt") as f:
+        f.write(str(counter))
+        f.close()
+        return str(counter)
 
 
 @app.route('/predict_test', methods=['POST','GET'] )
