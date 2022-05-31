@@ -3,6 +3,7 @@ import numpy as np
 import pickle
 import requests
 import os
+import logging
 
 model=pickle.load(open('Healthcare.pkl','rb'))
 
