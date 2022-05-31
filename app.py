@@ -65,10 +65,11 @@ def test():
     if current_count is not None:
         new_count = int(current_count) + 1
         current_count=write_click_db(new_count)
-    write_click_db(1)
+    else:
+        write_click_db(1)
      
     app.logger.debug('current_count :'+ current_count)
-    app.logger.debug('new_count :'+ str(new_count))
+    app.logger.debug('new_count after :'+ str(new_count))
     page='cardiac-arrest-smarthealth-herokuapp'
     url="https://smarthealthmonitoring.com/contactus/predictiondata"
     header=request.headers
