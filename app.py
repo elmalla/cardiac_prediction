@@ -87,7 +87,7 @@ def test():
     referr=request.referrer
 	
     def get_my_ip():
-        return jsonify({'ip': request.remote_addr}), 200
+        return request.remote_addr
 
     ip=get_my_ip()
     app.logger.debug('IP :'+ ip)
