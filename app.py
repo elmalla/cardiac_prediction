@@ -8,6 +8,12 @@ model=pickle.load(open('Healthcare.pkl','rb'))
 
 app = Flask(__name__)
 
+if __name__ != '__main__':
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
+    
+
 @app.route('/',methods=['POST','GET'])
 def home():
     page='cardiac-arrest-smarthealth-herokuapp'
@@ -52,15 +58,15 @@ def predict():
     return render_template('home.html',statement=result(),resultcolor=resultcolor())
 
 
-@app.route('/test',methods=['POST','GET'])
+@app.route('/test')
 def test():
     current_count = read_click_db()
     if current_count is not None:
         new_count = int(current_count) + 1
         current_count=write_click_db(new_count)
-
-    current_count=write_click_db(1)
-    
+    write_click_db(1)
+     
+    app.logger.debug('this is a DEBUG message')
     page='cardiac-arrest-smarthealth-herokuapp'
     url="https://smarthealthmonitoring.com/contactus/predictiondata"
     header=request.headers
