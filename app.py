@@ -74,7 +74,7 @@ def test():
     params = {"ip": ip,"headers":header,"user_agent":agent,"referr_url_sess ":referr,"page":page}
     print (requests.get(url, params).text)
 
-    return render_template('test.html',counter=current_count)
+    return render_template('test.html',counter=new_count)
 
 def read_click_db() -> str:
     if not os.path.isfile("visitors.txt"):
