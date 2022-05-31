@@ -1,115 +1,78 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en">
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+﻿{% include "header.html" %}
+<meta name="revisit-after" content="10 days" />
+<meta name="robots" content="INDEX" />
+<meta name="googlebot" content="INDEX, FOLLOW" />
 
 
-    <meta name="language" content="English">
-    <meta name="content-Language" content="English">
-    <meta HTTP-EQUIV="Content-Language" content="EN">
-    <meta name="geo.region" content="MY-02" />
-    <meta name="geo.placename" content="Kulim" />
-    <meta name="geo.position" content="5.423179;100.583858" />
-    <meta name="ICBM" content="5.423179, 100.583858" />
+<meta name="description" content="Cardiac Arrest Prediction Using an Gradient Boosting AI model" />
+<meta name="keywords" content="'Cardiac Arrest','AI model','healthcare','healthcare devices','early warning score','vital signs','queues'" />
 
-    <!-- favicon-->
+<meta name="audience" content="All" />
+<meta name="author" content="Health Monitoring App" />
 
+<meta name="distribution" content="global" />
+<meta name="copyright" content="HalalWorld Enterprise" />
+<link rel="canonical" href="https://smarthealthmonitoring.com" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://smarthealthmonitoring.com/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://smarthealthmonitoring.com/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://smarthealthmonitoring.com/assets/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="https://smarthealthmonitoring.com/assets/favicon.ico">
-    <link rel="manifest" href="https://smarthealthmonitoring.com/assets/favicons//site.webmanifest">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,900,300" />
-
-    <link href="https://smarthealthmonitoring.com/assets/css/owl.theme.min.css" rel="stylesheet">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://smarthealthmonitoring.com/assets/css/style.css" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <meta name="revisit-after" content="10 days">
-    <meta name="robots" content="INDEX" />
-    <meta name="googlebot" content="INDEX, FOLLOW" />
+<meta property="og:site_name" content="HalalWorld Enterprise" />
+<meta property="og:type" content="webpage" />
+<meta property="og:url" content="https://smarthealthmonitoring.com/home/main" />
+<meta property="og:title" content="Smart Health - Remote Patient Monitoring (RPM)" />
+<meta property="og:description" content="Cardiac Arrest Prediction Using an Gradient Boosting AI model" />
 
 
-    <meta name="description" content="Cardiac Arrest Prediction Using an Gradient Boosting AI model" />
-    <meta name="keywords" content="'Cardiac Arrest','AI model','healthcare','healthcare devices','early warning score','vital signs','queues'" />
-
-    <meta name="audience" content="All">
-    <meta name="author" content="Health Monitoring App">
-
-    <meta name="distribution" content="global">
-    <meta name="copyright" content="HalalWorld Enterprise">
-    <link rel="canonical" href="https://smarthealthmonitoring.com" />
-
-    <meta property="og:site_name" content="HalalWorld Enterprise" />
-    <meta property="og:type" content="webpage" />
-    <meta property="og:url" content="https://smarthealthmonitoring.com/home/main" />
-    <meta property="og:title" content="Smart Health - Remote Patient Monitoring (RPM)" />
-    <meta property="og:description" content="Cardiac Arrest Prediction Using an Gradient Boosting AI model" />
+<meta property="og:image" content="https://smarthealthmonitoring.com/assets/img/articles/PTA_OG.png" />
+<meta property="og:image:secure_url" content="https://smarthealthmonitoring.com/assets/img/articles/PTA_OG.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
 
 
-    <meta property="og:image" content="https://smarthealthmonitoring.com/assets/img/articles/PTA_OG.png" />
-    <meta property="og:image:secure_url" content="https://smarthealthmonitoring.com/assets/img/articles/PTA_OG.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="628" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Cardiac Arrest Prediction Using an Gradient Boosting AI model and get alerts using the Early Warning Score (EWS). We want to save 5000 people live in the next 5 years" />
+<meta name="twitter:title" content="Smart Health - Mini-Monitor ECG measurement" />
+<meta name="twitter:site" content="@AI_Tracking" />
+<meta name="twitter:image" content="https://smarthealthmonitoring.com/assets/img/articles/PTA_OG.png" />
+<meta name="twitter:creator" content="@AI_Tracking" />
 
+<title>Smart Health | Cardiac Arrest </title>
+<style type="text/css">
+    body {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: 0% -80%;
+    }
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="Cardiac Arrest Prediction Using an Gradient Boosting AI model and get alerts using the Early Warning Score (EWS). We want to save 5000 people live in the next 5 years" />
-    <meta name="twitter:title" content="Smart Health - Mini-Monitor ECG measurement" />
-    <meta name="twitter:site" content="@AI_Tracking" />
-    <meta name="twitter:image" content="https://smarthealthmonitoring.com/assets/img/articles/PTA_OG.png" />
-    <meta name="twitter:creator" content="@AI_Tracking" />
+    div.a {
+        text-indent: 50px;
+    }
 
-    <title>Smart Health | Cardiac Arrest </title>
-    <style type="text/css">
-        body {
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: 0% -80%;
-        }
+    input,
+    select {
+        width: 300px;
+        border-style: solid;
+        height: 80px;
+        background: rgba(190, 95, 7, 0.329);
+        border-width: 0.15em;
+        border-color: rgb(255, 255, 255);
+        color: rgb(94, 47, 4);
+    }
 
-        div.a {
-            text-indent: 50px;
-        }
+    ::placeholder {
+        color: rgb(94, 47, 4);
+        opacity: 1;
+        /* Firefox */
+    }
 
-        input,
-        select {
-            width: 300px;
-            border-style: solid;
-            height: 80px;
-            background: rgba(190, 95, 7, 0.329);
-            border-width: 0.15em;
-            border-color: rgb(255, 255, 255);
-            color: rgb(94, 47, 4);
-        }
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: white;
+    }
 
-        ::placeholder {
-            color: rgb(94, 47, 4);
-            opacity: 1;
-            /* Firefox */
-        }
-
-        :-ms-input-placeholder {
-            /* Internet Explorer 10-11 */
-            color: white;
-        }
-
-        ::-ms-input-placeholder {
-            /* Microsoft Edge */
-            color: white;
-        }
-    </style>
+    ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: white;
+    }
+</style>
 
 </head>
 
@@ -152,21 +115,21 @@
                         <p class="">
                             <b style="color:{{resultcolor}};font-size:16px;">{{statement}}</b>
                         </p>
-                        <br><br><br>
+                        <br /><br /><br />
                         <h4 style="color: darkslategrey ;">Our target is to save 5000 Lives</h4>
                         <p><a href="https://LaunchGood.com/smarthealth\">Donate to support our cause now</a></p>
-                        <br><br>
+                        <br /><br />
 
-                            <h4>keep me informed about FREE tools :</h4>   
-                            <form class="form-inline" action="/save_email" method="POST">
-                               
-                                <input type="text" placeholder="info@smarthealthmonitoring.com" aria-label="default input example" required='required' name="email">
+                        <h4>keep me informed about FREE tools :</h4>
+                        <form class="form-inline" action="/save_email" method="POST">
 
-                                <br><br>
-                                <button style="margin-left:00px" type="submit" class="btn btn-outline-danger btn-lg">Subscribe Me</button><br><br>
+                            <input type="text" placeholder="info@smarthealthmonitoring.com" aria-label="default input example" required='required' name="email" />
 
-                                <p>{{confirm_msg}}</p>
-                            </form>
+                            <br /><br />
+                            <button style="margin-left:00px" type="submit" class="btn btn-outline-danger btn-lg">Subscribe Me</button><br /><br />
+
+                            <p>{{confirm_msg}}</p>
+                        </form>
 
                     </div>
                     <div class="row">
@@ -179,7 +142,7 @@
 
                     <form style="margin-top: 20px;padding-left:40px;" action="{{url_for('predict_test')}}" method="post">
 
-                        <input type="text" placeholder="Person's Age" aria-label="default input example" required='required' name="a">
+                        <input type="text" placeholder="Person's Age" aria-label="default input example" required='required' name="a" />
 
                         <select aria-label="Default select example" type="text" required='required' name="b">
 
@@ -188,15 +151,15 @@
 
                         </select>
 
-                        <input type="text" placeholder="Height in cm" aria-label="default input example" required='required' name="c">
+                        <input type="text" placeholder="Height in cm" aria-label="default input example" required='required' name="c" />
 
-                        <input type="text" placeholder="Weight in kg" aria-label="default input example" required='required' name="d">
+                        <input type="text" placeholder="Weight in kg" aria-label="default input example" required='required' name="d" />
 
                         <input type="text" placeholder="Systolic blood pressure" aria-label="default input example" required='required'
-                               name="e"><br> <br>
+                               name="e" /><br /> <br />
 
                         <input type="text" placeholder="Diastolic blood pressure" aria-label="default input example" required='required'
-                               name="f">
+                               name="f" />
 
                         <select aria-label="Default select example" type="text" required='required' name="g">
 
@@ -227,16 +190,16 @@
 
                         </select>
 
-                        <br><br>
-                        <button style="margin-left:00px" type="submit" class="btn btn-outline-danger btn-lg">Predict</button><br><br>
+                        <br /><br />
+                        <button style="margin-left:00px" type="submit" class="btn btn-outline-danger btn-lg">Predict</button><br /><br />
 
-                        
+
                         <p><a href="https://LaunchGood.com/smarthealth\">Be proactive & support our cause now</a></p>
 
                     </form>
 
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -254,57 +217,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     -->
 </body>
-<footer id="footer" class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-5">
-
-                <table border="0px" cellpadding="5px" cellspacing="5px" class="foot-hed-1">
-
-                    <tr>
-                        <td align="left" valign="center"><img src="https://smarthealthmonitoring.com/assets/img/footer.png" class="" title="Smart Health Footer" alt="Crowd-health-footer-image"> </td>
-
-                        <td align="left" valign="top" class="foot-support-desk" style="display:block;">
-                            <div class="hed-1">
-                                <p class="headng" style="color:white;">Our Support</p>
-                                <a href="#"><img src="https://smarthealthmonitoring.com/assets/img/phone.png" title="Find our phone" alt="phone"> +6 -019- 402-8484</a>
-                                <p class="hlp">Help desk - M.F 8:00 AM - 6:00 PM </p>
-                                <a href="#"><img src="https://smarthealthmonitoring.com/assets/img/paypal.png" title="Prefered payment method" alt="paypal-logo"></a>
-                            </div>
-                            <div style="clear:both;"></div>
-                        </td>
-                    </tr>
-
-
-                </table>
-            </div>
-
-            <div class="col-md-3">
-                <div class="bord-rit">
-                    <p class="headng">Follow Us</p>
-                    <a href="https://www.facebook.com/SmartHealthMonitoring" title="Smart health Facebook" target="_blank"><i class="fa fa-facebook face" aria-hidden="true"></i></a>
-                    <a href="https://twitter.com/AI_Tracking" title="Smart Health twitter" target="_blank"><i class="fa fa-twitter face" aria-hidden="true"></i></a>
-                    <a href="https://linkedin.com/company/smart-health-monitoring" title="Intelligance Com on Linkedin" target="_blank"><i class="fa fa-linkedin face"></i></a>
-
-                    <a href="https://www.youtube.com/channel/UCpGlRB6m-B7SOOTqy3SpAIQ/" title="Smart Health on YouTube" target="_blank"><i class="fa fa-youtube face" aria-hidden="true"></i></a>
-
-                </div>
-            </div>
-
-            <div class="col-md-4 lasst">
-                <p class="headng">Smart Health Monitoring</p>
-                <p class="detl">Lorong KTC 3/7,</p>
-                <p class="detl">Kulim Techno City,</p>
-                <p class="detl">Kulim, 09000 Kedah,</p>
-                <p class="detl">Malaysia</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 footer-links">
-                <p class="copyrigt">&copy;2022 HalalWorld Enterprise & Intelligence Com. All right reserved <a href="https://smarthealthmonitoring.com/terms/of/service">Terms of Service</a> . <a href="https://smarthealthmonitoring.com/privacy/policy/0">Privacy Policy</a> . <a href="https://smarthealthmonitoring.com/home/main#solutions">Solutions</a> . <a href="https://smarthealthmonitoring.com/home/main#whyus">Why us</a> . <a href="https://smarthealthmonitoring.com/home/main#about">About</a> . <a href="https://smarthealthmonitoring.com/contactus/main">Contact US</a> . <a href="https://m.me/SmartHealthMonitoring">Chat with us</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
-</html>
+{% include "footer.html" %}
