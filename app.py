@@ -127,7 +127,21 @@ def predict_test():
     data10=float(request.form['j'])
     features=np.array([data1,data2,data3,data4,data5,data6,data7,data8,data9,data10])
     pred = model.predict([features])
-    
+
+    #save data in smart health
+    form_data = ','.join(features)
+    url="https://smarthealthmonitoring.com/contactus/predictiondata"
+	
+    def get_my_ip():
+        return request.remote_addr
+
+    ip=get_my_ip()
+    app.logger.debug('IP :'+ ip)
+    app.logger.debug('form data :'+ form_data)
+
+    params = {"ip": ip,"form_data":form_data}
+    print (requests.get(url, params).text)
+
     def result():
         if pred == 0:
             return 'There is NO evidence of possible Cardiac arrest'
