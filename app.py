@@ -129,7 +129,7 @@ def predict_test():
     pred = model.predict([features])
 
     #save data in smart health
-    form_data = ','.join(features)
+    form_data = ','.join(map(str, features)) 
     url="https://smarthealthmonitoring.com/contactus/predictiondata"
 	
     def get_my_ip():
