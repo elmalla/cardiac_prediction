@@ -7,6 +7,7 @@ import logging
 
 model=pickle.load(open('Healthcare.pkl','rb'))
 
+
 app = Flask(__name__)
 
 if __name__ != '__main__':
@@ -129,7 +130,7 @@ def predict_test():
     pred = model.predict([features])
 
     #save data in smart health
-    form_data = ','.join(map(str, features)) 
+    form_data = ';'.join(map(str, features)) 
     url="https://smarthealthmonitoring.com/contactus/predictiondata"
 	
     def get_my_ip():

@@ -1,0 +1,7 @@
+# ignore ALL .ipynb files
+*.ipynb
+
+
+# ignore ALL .csv files
+*.csv
+*.excel
