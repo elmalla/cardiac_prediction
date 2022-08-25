@@ -3,6 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ignore ALL .ipynb files
+*.ipynb
+
+
+# ignore ALL .csv files
+*.csv
+*.excel
+
 # C extensions
 *.so
 
